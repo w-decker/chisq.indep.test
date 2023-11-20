@@ -4,10 +4,13 @@
 \alias{chisq.indep.test}
 \title{Function to compute chi-squared independent samples test}
 \usage{
-chisq.indep.test(X)
+chisq.indep.test(X, full = FALSE)
 }
 \arguments{
 \item{X}{vector or matrix of data}
+
+\item{full}{If TRUE, return structure of additional data. False (defulat)
+returns only the statistic.}
 }
 \value{
 Named number of chi-squared value
