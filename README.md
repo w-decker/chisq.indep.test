@@ -1,6 +1,32 @@
 # chisq.indep.test
 Chi-squared test of independence
 
+# What is $\chi^2$?
+
+Let's say you role a six-sided die 6000 times. If we calculated the probability of rolling a '6' in one role by following the below equation...
+
+$$P(A) = \frac{\text{outcomes of A}}{\text{total outcomes possible}}$$
+
+We get 
+
+$$ P(A) = \frac{1}{6} $$
+
+Where $A$ is the probability of rolling a '6' in a single role. Now do this for all 6000 rolls. We _expect_ to role each possible face on the die 1000 times. This is the expected outcome. But this is unlikely. What happens if we role a '6' 4000 times out of all 6000 total rolls? Is the die okay? How does this distribution compare to the expected distribution. We can assess this frequency distribution is different from 0 using the $\chi^2$ _Goodness of Fit_ test. Which follows the equation below...
+
+$$\chi^2 = \sum\limits_{j}^{k} \frac{(f_{0,j} - f_{1, j})^2}{f_{0,j}}$$
+
+$f_0$ is your expected distribution and $f_1$ is your observed distribution. 
+
+However, the _Goodness of Fit_ test really only works when there is a known or expected distribution. If you want to examine the efficacy the distribution of two independent samples, you must use the _Independent Samples_ test. This follows a similar procedure conceptually but is represented by the following equation.
+
+$$\chi^2 = \sum\limits_{j}^{k} \frac{(F_{0,j} - F_{1,j})}{F_{0,j}} $$
+
+Where $F_0$ (your expected values) is represented by
+
+$$F_0 = \frac{(R * C)}{N} $$
+
+Such that $R$ is the row sums of $F_1$, $C$ is the column sums of $F_1$ and $N$ is the total number of observations. 
+
 # In R
 
 To use in R, type the following:
